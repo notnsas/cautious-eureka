@@ -8,7 +8,7 @@
 # pemegang Bitcoin? 
 
 # In[ ]:
-# dirty deeds done dirt cheap
+# s
 
 import numpy as np
 import pandas as pd
@@ -32,14 +32,37 @@ prices = [14292.2, 12858.9, 11467.5, 9241.1, 8559.6, 11073.5, 9704.3, 11402.3,
  9993.0, 8208.5, 8127.3, 8304.4, 7957.3, 9230.6, 9300.6, 8804.5,
  8497.3, 7324.1, 7546.6, 7510.9, 7080.8, 7156.2, 7321.5, 7376.8];
 
+# Untuk index atau nilai axis x dari prices
+total_week = len(prices)
+week_year = int(total_week/2)
+week_per_year = [i for i in range(1, week_year + 1)]
+
+# Plotnya
+plt.plot(week_per_year, prices[0:week_year], label="Tahun 2018")
+plt.plot(week_per_year, prices[week_year:], linestyle='--', label="Tahun 2019")
+plt.title('Harga Bitcoin Setiap Akhir Minggu')
+plt.legend()
+plt.ylabel('Harga Bitcoin')
+plt.xlabel('Minggu')
+plt.show()
 
 # Penjelasan No 1
 # 
 # Chart apa yang anda pilih untuk problem diatas dan mengapa anda memilih chart 
 # tersebut? 
+"""
+Jawaban :
+Chart yang saya pilih adalah Line Chart, alasanya karena dengan Line Chart saya dapat melihat
+perubahan penjualan serta melihat trend yang dapat memberi tahu solusi masalah ini. 
+"""
 # 
 # Tahun berapa pemegang bitcoin memiliki keuntungan yang lebih banyak? 
-
+"""
+Jawaban :
+Tahunnya adalah tahun 2019 yang dimana pemegang bitcoin memiliki keuntungan lebih banyak, hal ini
+dapat dilihat dari trendnya bagaimana di tahun 2019 mereka cenderung mayoritas naik tidak seperti
+di 2018 yang selalu menurun.
+"""
 # 
 
 # Soal 2: Permen 
