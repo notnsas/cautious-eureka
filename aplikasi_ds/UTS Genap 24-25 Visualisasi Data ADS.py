@@ -77,6 +77,20 @@ di 2018 yang selalu menurun.
 candy_names = ['Kit Kat', 'Snickers', 'Milky Way', 'Toblerone', 'Twi x'];
 candy_counts = [52, 39, 78, 13, 78];
 
+candy_names = ['Kit Kat', 'Snickers', 'Milky Way', 'Toblerone', 'Twi x'];
+candy_counts = [52, 39, 78, 13, 78];
+colors = ('#8B4513', '#93C572', '#E67F0D', '#FFF8DC', '#D53032')
+explode = [0, 0.1, 0, 0, 0]
+plt.title('Favorite Ice Cream Flavors')
+plt.pie(
+candy_counts,
+labels=candy_names,
+autopct='%1.1f%%',
+colors=colors,
+explode=explode,
+# shadow=True
+)
+plt.show()
 
 # Penjelsan No. 2
 # 
@@ -125,6 +139,17 @@ dessert_sales = {
  'Mochi': 13,
 };
 
+# Membuat dataset menggunakan dictionary lalu di sort
+df_dessert = pd.DataFrame(dessert_sales.items(), columns=['dessert_name', 'sales'])
+df_dessert.sort_values(by='sales', inplace=True)
+
+# Plotnya
+plt.figure(figsize=(15,6))
+plt.barh(df_dessert['dessert_name'], df_dessert['sales'])
+plt.xlabel('Nama Makanan Penutup')
+plt.ylabel('Penjualan')
+plt.title('Penjualan Makanan Penutup')
+plt.show()
 
 # Penjelasan No. 3
 # 
@@ -171,6 +196,10 @@ cpu_usage = [
  [1, 2, 3, 1, 1, 3, 4, 2, 3, 1, 2, 2, 5, 3, 2, 1, 4, 2, 45, 26, 33, 2, 2, 1], # Sunday
 ];
 
+# Plotnya
+sns.heatmap(cpu_usage, cmap='hot', annot=True)
+plt.title('Grafik Heatmap')
+plt.show()
 
 # Penjelasan No. 4
 # 
@@ -237,6 +266,11 @@ y = [-2.36, -3.41, 13.01, -2.91, -2.28, 12.83, 13.13, 11.94, 0.93, -2.76, 13.31,
  -1.95, 11.76, 6.82, 12.44, 13.28, -3.46, 0.7, -2.55, -2.37, 12.48, 7.26,
  -2.45, 0.31, -2.51];
 
+# Plotnya
+sns.scatterplot(x=x,
+                y=y)
+plt.title('Grafik Scatter')
+plt.show()
 
 # Penjelasan No. 5
 # 
