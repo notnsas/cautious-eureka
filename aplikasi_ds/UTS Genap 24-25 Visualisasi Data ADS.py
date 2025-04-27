@@ -31,14 +31,37 @@ prices = [14292.2, 12858.9, 11467.5, 9241.1, 8559.6, 11073.5, 9704.3, 11402.3,
  9993.0, 8208.5, 8127.3, 8304.4, 7957.3, 9230.6, 9300.6, 8804.5,
  8497.3, 7324.1, 7546.6, 7510.9, 7080.8, 7156.2, 7321.5, 7376.8];
 
+# Untuk index atau nilai axis x dari prices
+total_week = len(prices)
+week_year = int(total_week/2)
+week_per_year = [i for i in range(1, week_year + 1)]
+
+# Plotnya
+plt.plot(week_per_year, prices[0:week_year], label="Tahun 2018")
+plt.plot(week_per_year, prices[week_year:], linestyle='--', label="Tahun 2019")
+plt.title('Harga Bitcoin Setiap Akhir Minggu')
+plt.legend()
+plt.ylabel('Harga Bitcoin')
+plt.xlabel('Minggu')
+plt.show()
 
 # Penjelasan No 1
 # 
 # Chart apa yang anda pilih untuk problem diatas dan mengapa anda memilih chart 
 # tersebut? 
+"""
+Jawaban :
+Chart yang saya pilih adalah Line Chart, alasanya karena dengan Line Chart saya dapat melihat
+perubahan penjualan serta melihat trend yang dapat memberi tahu solusi masalah ini. 
+"""
 # 
 # Tahun berapa pemegang bitcoin memiliki keuntungan yang lebih banyak? 
-
+"""
+Jawaban :
+Tahunnya adalah tahun 2019 yang dimana pemegang bitcoin memiliki keuntungan lebih banyak, hal ini
+dapat dilihat dari trendnya bagaimana di tahun 2019 mereka cenderung mayoritas naik tidak seperti
+di 2018 yang selalu menurun.
+"""
 # 
 
 # Soal 2: Permen 
@@ -53,6 +76,20 @@ prices = [14292.2, 12858.9, 11467.5, 9241.1, 8559.6, 11073.5, 9704.3, 11402.3,
 candy_names = ['Kit Kat', 'Snickers', 'Milky Way', 'Toblerone', 'Twi x'];
 candy_counts = [52, 39, 78, 13, 78];
 
+candy_names = ['Kit Kat', 'Snickers', 'Milky Way', 'Toblerone', 'Twi x'];
+candy_counts = [52, 39, 78, 13, 78];
+colors = ('#8B4513', '#93C572', '#E67F0D', '#FFF8DC', '#D53032')
+explode = [0, 0.1, 0, 0, 0]
+plt.title('Peluang Mengambil Permen Dari Kantong')
+plt.pie(
+candy_counts,
+labels=candy_names,
+autopct='%1.1f%%',
+colors=colors,
+explode=explode,
+# shadow=True
+)
+plt.show()
 
 # Penjelsan No. 2
 # 
@@ -101,6 +138,17 @@ dessert_sales = {
  'Mochi': 13,
 };
 
+# Membuat dataset menggunakan dictionary lalu di sort
+df_dessert = pd.DataFrame(dessert_sales.items(), columns=['dessert_name', 'sales'])
+df_dessert.sort_values(by='sales', inplace=True)
+
+# Plotnya
+plt.figure(figsize=(15,6))
+plt.barh(df_dessert['dessert_name'], df_dessert['sales'])
+plt.xlabel('Penjualan')
+plt.ylabel('Nama Makanan Penutup')
+plt.title('Penjualan Makanan Penutup')
+plt.show()
 
 # Penjelasan No. 3
 # 
@@ -147,6 +195,12 @@ cpu_usage = [
  [1, 2, 3, 1, 1, 3, 4, 2, 3, 1, 2, 2, 5, 3, 2, 1, 4, 2, 45, 26, 33, 2, 2, 1], # Sunday
 ];
 
+# Plotnya
+sns.heatmap(cpu_usage, cmap='hot', annot=True)
+plt.title('Grafik Heatmap')
+plt.xlabel('Jam')
+plt.ylabel('Hari')
+plt.show()
 
 # Penjelasan No. 4
 # 
@@ -181,7 +235,10 @@ dari cpu usagenya.
 """ 
 
 # Pada hari apa pekerja mulai bekerja pada komputer mereka pada malam hari?
-
+"""
+Jawaban :
+Hari Minggu, karena pada hari itu di jam 18 sampai jam 20 cpu usagenya tinggi
+""" 
 # Latihan 5: Jamur
 # Seorang peneliti sedang mempelajari jamur. Mereka telah menemukan cincin jamur dan 
 # memberi label koordinat. Biasanya jamur menyebar keluar dari pusat jamur awal.
@@ -213,6 +270,13 @@ y = [-2.36, -3.41, 13.01, -2.91, -2.28, 12.83, 13.13, 11.94, 0.93, -2.76, 13.31,
  -1.95, 11.76, 6.82, 12.44, 13.28, -3.46, 0.7, -2.55, -2.37, 12.48, 7.26,
  -2.45, 0.31, -2.51];
 
+# Plotnya
+sns.scatterplot(x=x,
+                y=y)
+plt.title('Grafik Scatter')
+plt.xlabel('X axis')
+plt.ylabel('Y axis')
+plt.show()
 
 # Penjelasan No. 5
 # 
