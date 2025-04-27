@@ -80,7 +80,7 @@ candy_names = ['Kit Kat', 'Snickers', 'Milky Way', 'Toblerone', 'Twi x'];
 candy_counts = [52, 39, 78, 13, 78];
 colors = ('#8B4513', '#93C572', '#E67F0D', '#FFF8DC', '#D53032')
 explode = [0, 0.1, 0, 0, 0]
-plt.title('Favorite Ice Cream Flavors')
+plt.title('Peluang Mengambil Permen Dari Kantong')
 plt.pie(
 candy_counts,
 labels=candy_names,
@@ -145,8 +145,8 @@ df_dessert.sort_values(by='sales', inplace=True)
 # Plotnya
 plt.figure(figsize=(15,6))
 plt.barh(df_dessert['dessert_name'], df_dessert['sales'])
-plt.xlabel('Nama Makanan Penutup')
-plt.ylabel('Penjualan')
+plt.xlabel('Penjualan')
+plt.ylabel('Nama Makanan Penutup')
 plt.title('Penjualan Makanan Penutup')
 plt.show()
 
@@ -198,6 +198,8 @@ cpu_usage = [
 # Plotnya
 sns.heatmap(cpu_usage, cmap='hot', annot=True)
 plt.title('Grafik Heatmap')
+plt.xlabel('Jam')
+plt.ylabel('Hari')
 plt.show()
 
 # Penjelasan No. 4
@@ -233,7 +235,10 @@ dari cpu usagenya.
 """ 
 
 # Pada hari apa pekerja mulai bekerja pada komputer mereka pada malam hari?
-
+"""
+Jawaban :
+Hari Minggu, karena pada hari itu di jam 18 sampai jam 20 cpu usagenya tinggi
+""" 
 # Latihan 5: Jamur
 # Seorang peneliti sedang mempelajari jamur. Mereka telah menemukan cincin jamur dan 
 # memberi label koordinat. Biasanya jamur menyebar keluar dari pusat jamur awal.
@@ -269,6 +274,8 @@ y = [-2.36, -3.41, 13.01, -2.91, -2.28, 12.83, 13.13, 11.94, 0.93, -2.76, 13.31,
 sns.scatterplot(x=x,
                 y=y)
 plt.title('Grafik Scatter')
+plt.xlabel('X axis')
+plt.ylabel('Y axis')
 plt.show()
 
 # Penjelasan No. 5
